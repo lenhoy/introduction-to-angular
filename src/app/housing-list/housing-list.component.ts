@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { HousingLocation } from '../housing-location'; // Data type interface
 
 @Component({
   selector: 'app-housing-list',
@@ -12,9 +13,11 @@ export class HousingListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  @Input() locationList: HousingLocation[] = [];
+
   // Click handler
   searchHousingLocations(searchText: string){
-    console.log("Loggin'")
+    console.log(searchText);
   }
 
 }
