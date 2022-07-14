@@ -8,13 +8,16 @@ import { HousingLocation } from './housing-location';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
+  // #region Props
   title = 'fairhouse';
+  selectedLocation: HousingLocation | undefined;
 
   housingLocationList: HousingLocation[] = 
   [
     {
       name: "Acme Fresh Start Housing",
-      city: "Chicago",
+      city: "Oslo",
       state: "IL",
       photo: "../assets/housing-1.jpg",
       availableUnits: 4,
@@ -23,7 +26,7 @@ export class AppComponent {
     },
     {
       name: "A113 Transitional Housing",
-      city: "Santa Monica",
+      city: "Trondheim",
       state: "CA",
       photo: "../assets/housing-2.jpg",
       availableUnits: 0,
@@ -32,7 +35,7 @@ export class AppComponent {
     },
     {
       name: "Warm Beds Housing Support",
-      city: "Juneau",
+      city: "Bergen",
       state: "AK",
       photo: "../assets/housing-3.jpg",
       availableUnits: 1,
@@ -40,6 +43,20 @@ export class AppComponent {
       laundry: false,
     }
   ];
+
+  //#endregion
+
+  //#region methods
+
+  //Gets the output from eventemitter
+  updateSelectedLocation(location: HousingLocation) {
+    this.selectedLocation = location;
+  }
+
+  //TODO: remove?
+  //searchHousingLocations(){}
+
+  //#endregion
   
 
 }
